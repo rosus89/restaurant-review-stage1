@@ -3,7 +3,8 @@
 // Install
 self.addEventListener('install', function (event) {
     event.waitUntil(
-        caches.open(rrCache).then(function (cache) {
+        caches.open(restaurants-review-Cache-v1).then(function (cache) {
+            console.log('Opened cache');
             return cache.addAll(
                 [   '/',
                     '/img/1.jpg',
