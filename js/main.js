@@ -9,7 +9,7 @@ var markers = []
 if ('serviceWorker' in navigator) {
 window.addEventListener('load', ()=> {
   navigator.serviceWorker
-    .register('/restaurant-review-stage1/sw.js')
+    .register('/restaurant-review-stage1/sw.js', { scope: '/restaurant-review-stage1/' })
     .then(function (registration) {
       console.log("Service Worker Registered");
     })
