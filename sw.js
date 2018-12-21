@@ -6,21 +6,21 @@ self.addEventListener('install', function (event) {
         caches.open('restaurants-review-Cache-v1').then(function (cache) {
             console.log('Opened cache');
             return cache.addAll(
-                [   '/',
-                    '/img/1.jpg',
-                    '/img/2.jpg',
-                    '/img/3.jpg',
-                    '/img/4.jpg',
-                    '/img/5.jpg',
-                    '/img/6.jpg',
-                    '/img/7.jpg',
-                    '/img/8.jpg',
-                    '/img/9.jpg',
-                    '/img/10.jpg',
-                    '/js/dbhelper.js',
-                    '/js/main.js',
-                    '/js/restaurant_info.js',
-                    '/css/styles.css'
+                [   '/restaurant-review-stage1/',
+                    '/restaurant-review-stage1/img/1.jpg',
+                    '/restaurant-review-stage1/img/2.jpg',
+                    '/restaurant-review-stage1/img/3.jpg',
+                    '/restaurant-review-stage1/img/4.jpg',
+                    '/restaurant-review-stage1/img/5.jpg',
+                    '/restaurant-review-stage1/img/6.jpg',
+                    '/restaurant-review-stage1/img/7.jpg',
+                    '/restaurant-review-stage1/img/8.jpg',
+                    '/restaurant-review-stage1/img/9.jpg',
+                    '/restaurant-review-stage1/img/10.jpg',
+                    '/restaurant-review-stage1/js/dbhelper.js',
+                    '/restaurant-review-stage1/js/main.js',
+                    '/restaurant-review-stage1/js/restaurant_info.js',
+                    '/restaurant-review-stage1/css/styles.css'
                 ]
             );
         })
