@@ -29,12 +29,25 @@ self.addEventListener('install', function (event) {
 
 // Cache falling back to the network offline first method
 
-self.addEventListener('fetch', (event) => {
+// self.addEventListener('fetch', (event) => {
+//     event.respondWith(
+//         caches.match(event.request)
+//         .then((response) => {
+//             console.log('fetch request');
+//             return response || fetch(event.request);
+//         })
+//     ); 
+// });
+
+self.addEventListener('fetch', function (event) {
     event.respondWith(
-        caches.match(event.request)
-        .then((response) => {
-            console.log('fetch request');
-            return response || fetch(event.request);
+        caches.open('restaurants-review-Cache-v1').then(function (cache) {
+            return cache.match(event.request).then(function (response) {
+                return response || fetch(event.request).then(function (response) {
+                    cache.put(event.request, response.clone());
+                    return response;
+                });
+            });
         })
-    ); 
+    );
 });
